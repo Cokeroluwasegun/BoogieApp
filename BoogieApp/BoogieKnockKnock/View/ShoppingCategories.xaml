@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="BoogieApp.BoogieKnockKnock.View.ShoppingCategories"
+             xmlns:local="clr-namespace:BoogieApp.Images"
+             NavigationPage.HasNavigationBar="False"
+            Padding="0,20,0,0" >
+    <ContentView.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <StackLayout Padding="0,0,15,0">
+                <ImageButton BackgroundColor="Transparent" Source="{local:ImageResource BoogieApp.Images.bell.png}" HeightRequest="20" WidthRequest="28" HorizontalOptions="EndAndExpand" Command="{Binding NavigateNotification}"/>
+                <Image Source="{local:ImageResource BoogieApp.Images.Boogielogo2.png}" HeightRequest="70" Margin="30,-20,0,0"  HorizontalOptions="Center"/>
+                <StackLayout Orientation="Horizontal" Spacing="10">
+                    <!--<Label Text="Wallet Balance" TextColor="{StaticResource PrimaryColor}"  FontAttributes="Bold"
+                           Style="{StaticResource AllTexts}" />-->
+                    <Label Text="Gbagada" HorizontalOptions="EndAndExpand" FontSize="14" FontFamily="RamarajaFont" TextColor="{StaticResource PrimaryColor}"/>
+                </StackLayout>
+                <!--<Label Text="N0.00" TextColor="{StaticResource PrimaryColor}" FontSize="14" FontFamily="RamarajaFont" FontAttributes="Bold" Margin="0,-10,0,0"/>-->
+               
+            </StackLayout>
+
+            <Frame Grid.Row="1" BackgroundColor="{StaticResource PrimaryColor}" HeightRequest="100" CornerRadius="10" Margin="30,0" IsVisible="False">
+                <Label Text="Adverts will be placed here" HorizontalOptions="CenterAndExpand" TextColor="White" FontSize="25" VerticalOptions="CenterAndExpand" FontFamily="RamarajaFont"/>
+            </Frame>
+
+            <ListView Grid.Row="2" ItemsSource="{Binding categoriesModels}" SeparatorVisibility="None" RowHeight="115" Margin="10,10,10,0" ItemSelected="ListView_ItemSelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Frame HasShadow="True"  CornerRadius="13" BorderColor="Transparent" VerticalOptions="CenterAndExpand" Padding="1" HeightRequest="90">
+                                <Image 
+                               Source="{Binding ImageUrl}" Aspect="Fill"/>
+                            </Frame>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Grid>
+    </ContentView.Content>
+</ContentView>

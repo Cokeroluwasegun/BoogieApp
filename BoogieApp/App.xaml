@@ -1,5 +1,44 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Application xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:d="http://xamarin.com/schemas/2014/forms/design" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="BoogieApp.App">
     <Application.Resources>
+
+        <ResourceDictionary>
+
+            <Color x:Key="PrimaryColor">#52C5FC</Color>
+
+
+            <!-- FONTS -->
+            <OnPlatform x:Key="JosefinSansRegular"
+                        x:TypeArguments="x:String">
+                <On Platform="Android,iOS" Value="JosefinSans-Regular.ttf" />
+            </OnPlatform>
+
+            <OnPlatform x:Key="JosefinSansSemiBold"
+                        x:TypeArguments="x:String">
+                <On Platform="Android,iOS" Value="JosefinSans-SemiBold.ttf" />
+            </OnPlatform>
+            
+            <OnPlatform x:Key="JosefinSansBold"
+                        x:TypeArguments="x:String">
+                <On Platform="Android,iOS" Value="JosefinSans-Bold.ttf" />
+            </OnPlatform>
+
+
+            <!-- Styles -->
+            <Style TargetType="Label" x:Key="AllTexts">
+                <Setter Property="FontFamily" Value="RamarajaFont"/>
+                <Setter Property="FontSize" Value="14"/>
+            </Style>
+
+            <Style TargetType="{x:Type Label}" x:Key="DHeader">
+                <Setter Property="TextColor" Value="{StaticResource PrimaryColor}"/>
+                <Setter Property="FontSize" Value="19" />
+                <Setter Property="HorizontalOptions" Value="CenterAndExpand"/>
+                <Setter Property="FontFamily" Value="{StaticResource JosefinSansSemiBold}"/>
+            </Style>
+
+        </ResourceDictionary>
+                             
+        
     </Application.Resources>
 </Application>
